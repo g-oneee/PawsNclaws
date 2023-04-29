@@ -1,0 +1,23 @@
+.mainblog{
+    display: flex;
+    flex-direction: column;
+    
+    margin-left: 140px;
+    width:80%;
+}
+.mainblog img{
+    height: 25%;
+    width: 50%;
+  
+}
+ h1{
+    /* color: #7AB730; */
+    margin-left: 220px;
+
+}
+
+ h3{
+    /* color: #7AB730; */
+    margin-left:420px;
+
+}

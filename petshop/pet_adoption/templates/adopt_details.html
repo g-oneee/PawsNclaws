@@ -1,0 +1,54 @@
+{% extends 'master.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+
+
+<!-- Blog Start -->
+<div class="container py-5">
+    <div class="row g-5">
+        <div class="col-lg-5">
+           
+            <div class="mb-5">
+                <img class="img-fluid w-75 rounded mb-5 mx-auto d-block" src="/{{adopt.image}}" alt="">
+
+            </div>
+
+        </div>
+
+        <!-- Sidebar Start -->
+        <div class="col-lg-7">
+            <div class="mb-5">
+                <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">About Pet</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <!-- we can make this hover:green by using a tag instead of div tag -->
+                    <div class="h5 bg-light py-2 px-3 mb-2">Name     - {{adopt.name}}</div>
+                    <div class="h5 bg-light py-2 px-3 mb-2">Location - {{adopt.location}}</div>
+                    <div class="h5 bg-light py-2 px-3 mb-2">Breed    - {{adopt.Breed}}</div>
+                    <div class="h5 bg-light py-2 px-3 mb-2">Type     - {{adopt.petCategory}}</div>  
+                    <div class="h5 bg-light py-2 px-3 mb-2">Status   - {{adopt.is_available}}</div>  
+                    
+                    <div class="h5 bg-light py-2 px-3 mb-2">Age     -  {% if adopt.age == 'p' %} Puppyhood {% elif adopt.age == 'a' %} Adolescence {% elif adopt.age == 'ad' %} Adulthood {% else %} Senior {% endif %}</div>
+                    <div class="h5 bg-light py-2 px-3 mb-2">Gender     - {% if adopt.gender == 'M' %} Male {% else %} Female {% endif %}</div>
+                    <div class="h5 bg-light py-2 px-3 mb-2">Vaccine Name     - {{adopt.vaccineinfo}}</div>  
+                        <div class="row mt-1">
+                            <div class="h5 bg-light col-lg-4">Vaccinated {% if adopt.vacinated == 'y' %}  <i class="fa fa-check" style="color:#7AB730"></i> {% else %} <i class="fa fa-close" style="color:#7AB730">X</i> {% endif %}</div>
+                            <div class="h5 bg-light col-lg-4">Spayed or Neutered {% if adopt.neutered_or_spayed == 'y' %} <i class="fa fa-check" style="color:#7AB730"></i> {% else %} <i class="fa fa-close" style="color:#7AB730">X</i> {% endif %}</div>
+                            <div class="h5 bg-light col-lg-4">Good with other pets {% if adopt.good_with_dogs == 'y' %} <i class="fa fa-check" style="color:#7AB730"></i> {% else %} <i class="fa fa-close" style="color:#7AB730">X</i> {% endif %}</div>
+                            <div class="h5 bg-light col-lg-4">Good with kids {% if adopt.good_with_kids == 'y' %} <i class="fa fa-check" style="color:#7AB730"></i> {% else %} <i class="fa fa-close" style="color:#7AB730">X</i> {% endif %}</div>
+                            <div class="h5 bg-light col-lg-4">Shots upto date {% if adopt.shots_upto_date == 'y' %} <i class="fa fa-check" style="color:#7AB730"></i> {% else %} <i class="fa fa-close" style="color:#7AB730">X</i> {% endif %}</div>
+                            <div class="h5 bg-light col-lg-4">Needs loving adopter {% if adopt.needs_loving_adopter == 'y' %} <i class="fa fa-check" style="color:#7AB730"></i> {% else %} <i class="fa fa-close" style="color:#7AB730">X</i> {% endif %}</div>
+                        </div>
+                    <!-- <a class="h5 bg-light py-2 px-3 mb-2" href="#">Medical Certificate</a>
+                    <a class="h5 bg-light py-2 px-3 mb-2" href="#">Location</a> -->
+                    <a href="{% url 'adoptform' %}" class="btn btn-primary text-uppercase py-2 px-4 my-3 w-30 mx-auto d-block">adopt now</i></a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Sidebar End -->
+    </div>
+</div>
+<!-- Blog End -->
+
+{% endblock %}

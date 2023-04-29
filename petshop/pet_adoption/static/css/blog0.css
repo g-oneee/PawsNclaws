@@ -1,0 +1,28 @@
+.container_1, .container_2 ,.container_3 ,.container_4 ,.container_5{
+    width: 70%;
+    border-bottom: 2px rgb(144, 143, 143) solid;
+    margin-bottom: 10px;
+    margin-left: 200px;
+    display: flex;
+
+}
+.container_1 img, .container_2 img,.container_3 img ,.container_4 img,.container_5 img{
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.innercontainer{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    color: #7AB730;
+}
+.megacontainer{
+    /* box-shadow: 10px 10px 10px 100px #888888; */
+    margin-top: 20px;
+    margin-left: 130px;
+    width: 80%;
+    /* border: 2px solid black; */
+    border-radius: 20px;
+}

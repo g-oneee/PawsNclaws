@@ -1,0 +1,55 @@
+{% extends 'master.html' %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/adoptform.css' %}">
+<div class="megacontainer">
+    <div class="row" style="margin-top: 3rem;">
+    <div class="col-lg-1">
+
+    </div>
+       <div class="col-lg-11">
+        <div class="border-start border-5 border-primary ps-5 mb-5 mx-auto d-block " style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Adoption</h6>
+            <h1 class="display-5 text-uppercase mb-0" style="color: black;">Want to adopt?</h1>
+            <!-- <h6 class="display-5 text-uppercase mb-0" style="color: black;">Answer these questions</h6> -->
+            <h1>Answer these questions</h1>                     
+        </div>
+    <p>&nbsp;</p>                            
+    <p>Thank you for your interest in adopting a pet from the Paws n Claws! The following information is required so that we can assist you in the selection of your new pet. This form and a consultation with an AWF adoption counselor is designed to help us determine if the adoption is in the animal’s best interest and to assist you in finding the pet most compatible with your lifestyle.</p>
+    <p>&nbsp;</p>
+    <form action="formsubmition" method="post">
+        {% csrf_token %}
+        <label for="petname">Which pet you want to adopt</label>
+        <select name="petname" id="firstime" class="mx-auto d-block w-25">
+            {% for adopt in adopt %}
+            <option value="{{adopt.name}}">{{adopt.name}}</option>
+            {% endfor %}
+            <!-- <option value="no">No</option> -->
+        </select>
+        <label for="responsibilty">Who will be responsible for the dog's care (feeding, exercise, training, potty walks, vet visits, socialization etc)? *</label>
+
+        <input type="text" name="responsibilty" id="responsibilty" placeholder="Enter Your Answer"  required >
+       <label for="scaretaker">Who will provide for your pet in the event that you become ill or unable to care for him/her? *</label>
+       <input type="text" name="scaretaker" id="scaretaker" placeholder="Enter Your Answer">
+       <label for="lalone">How many hours a day will your dog be left alone? *</label>
+       <input type="text" name="lalone" id="lalone" placeholder="Enter Your Answer">
+       <label for="firstime">Will this be your first pet? *</label>
+       <select name="firstime" id="firstime" class="mx-auto d-block">
+           <option value="yes">Yes</option>
+           <option value="no">No</option>
+       </select>
+       <p>&nbsp;</p>
+
+       <input type="submit" value="submit" class="btn btn-primary py-2 px-3 mx-auto d-block" style="margin-left: 470px;
+       text-align: center;
+       width: 270px;
+       background-color: #7AB730;
+       border-radius:5px;
+   ">
+    
+    
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'master.html' %}
+{% block body %}
+ <div class="container">
+
+ <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-sm-4">
+
+                    </div>
+                    <div class="col-sm-4">
+                    <div class="mb-2 w-75" style="float:right;">
+<!--                        <div class="input-group">-->
+<!--                            <input type="text" class="form-control p-3" placeholder="Keyword">-->
+<!--                            <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="row">
+                    {% if product|length < 1 %}
+                    <h1> <b> OPPS! </b> We Couldint Find This Product</h1>
+                    {% endif %}
+                    {% for prod in product %}
+                <div class="col-sm-4 my-3 ">
+
+                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
+                        <img class="img-fluid mb-4" src="/{{prod.image}}" alt="">
+                        <h6 class="text-uppercase">{{prod.name}}</h6>
+                        <h5 class="text-primary mb-0">₹{{prod.price}}</h5>
+                        <div class="btn-action d-flex justify-content-center">
+                            <a class="btn btn-primary py-2 px-3" href="{% url 'cart_add' prod.id %}"><i class="bi bi-cart"></i></a>
+                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+</div>
+
+            </div>
+     </div>
+
+{% endblock %}

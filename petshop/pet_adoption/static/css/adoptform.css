@@ -1,0 +1,40 @@
+.megacontainer{
+    /* box-shadow: 10px 10px 10px 100px #888888; */
+    margin-top: 20px;
+    margin-left: 130px;
+    width: 80%;
+    /* border: 2px solid black; */
+    border-radius: 20px;
+    text-align: center;
+}
+.megacontainer p{
+    color: #212121;
+    font-size: 1.2rem
+}
+form{
+    
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    color: #7AB730
+}
+input[type=text]{
+    background-color: #F3F3F3;
+    height: 100px;
+    text-align: center;
+    
+    border: #F3F3F3;
+}
+label{
+    color: #363636;
+    font-size: 1.5rem
+}
+select{
+    margin-left: 570px;
+    text-align: center;
+    width: 70px;
+    background-color: #F3F3F3;
+
+}
+

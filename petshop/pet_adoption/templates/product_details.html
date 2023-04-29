@@ -1,0 +1,61 @@
+{% extends 'master.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+
+
+<!-- Blog Start -->
+<div class="container py-5">
+    <div class="row g-5">
+        <div class="col-lg-5">
+           
+            <div class="mb-5">
+                <img class="img-fluid w-75 rounded mb-5 mx-auto d-block" src="/{{product1.image}}" alt="">
+
+            </div>
+
+        </div>
+
+        <!-- Sidebar Start -->
+        <div class="col-lg-7">
+            <div class="mb-5">
+                <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Product Details</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="h5 bg-light py-2 px-3 mb-2" href="#">{{product1.name}}</a>
+                    <a class="h5 bg-light py-2 px-3 mb-2" href="#">₹{{product1.price}}</a>
+                    <a class="h5 bg-light py-2 px-3 mb-2" href="#">{{product1.category}}</a>
+                    <!-- <a class="h5 bg-light py-2 px-3 mb-2" href="#">Medical Certificate</a>
+                    <a class="h5 bg-light py-2 px-3 mb-2" href="#">Location</a> -->
+                    <a href="{% url 'cart_add' product1.id %}" class="btn btn-primary text-uppercase py-2 px-4 my-3 w-30 mx-auto d-block">Add to Cart <i class="bi bi-cart"></i></a>
+                </div>
+            </div>  
+
+        </div>
+        <!-- Sidebar End -->
+        <div class="col-lg-1">
+
+        </div>
+        <div class="col-lg-11">
+            <h4 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">More Products</h4>
+            <div class="owl-carousel product-carousel">
+                {% for prod1 in product2 %}
+                <div class="pb-5">
+                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
+                        <img class="img-fluid mb-4" src="/{{prod1.image}}" alt="">
+                        <h6 class="text-uppercase">{{prod1.name}}</h6>
+                        <h5 class="text-primary mb-0">₹{{prod1.price}}</h5>
+                        <div class="btn-action d-flex justify-content-center">
+                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
+                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+
+{% endblock %}

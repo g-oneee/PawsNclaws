@@ -1,0 +1,17 @@
+last updated - 13/10/22 2pm by- jeevan
+
+added - adoption form
+        product view
+        adopt view
+        cart 
+        adopt done
+        product 
+        for adoption form done 
+        added adopt ka
+        chnaged in adopt form(added a pet name)
+        mail after sending a request for adoption
+
+remaining things(services,etc)
+
+
+lastest done 28-11

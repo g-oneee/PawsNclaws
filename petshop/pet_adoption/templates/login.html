@@ -1,0 +1,28 @@
+{% extends 'master.html' %}
+
+{% block body %}
+
+
+<div class="container" > 
+    <div class="wrapper">
+      <div class="title"><span>Login Form</span></div>
+      <form action="signin" method="post">
+        {% csrf_token %}
+        <div class="row">
+          <i class="fas fa-user"></i>
+          <input type="text"  name="username" id="username" placeholder="Email or Phone" required>
+        </div>
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <input type="password"name="pass1" id="pass1" placeholder="Password" required>
+        </div>
+        <div class="pass"><a href="#">Forgot password?</a></div>
+        <div class="row button">
+          <input type="submit" value="Login">
+        </div>
+        <div class="signup-link">Not a member? <a href="signin_2">Signup now</a></div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
